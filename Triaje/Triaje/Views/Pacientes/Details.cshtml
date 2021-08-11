@@ -1,0 +1,53 @@
+﻿@model Triaje.Models.Paciente
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h4 class="text-secondary" style="font-family:Vogue; text-decoration:underline; text-align:center;">Dealles Paciente</h4>
+
+<div>
+    <hr />
+    <dl class="row" style="font-family:Garamond;">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdentidadPaciente)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.IdentidadPaciente)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NombresPaciente)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.NombresPaciente)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contacto)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.Contacto)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ApellidosPaciente)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.ApellidosPaciente)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NumeroContacto)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.NumeroContacto)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-secondary" style="font-family:Vogue" asp-action="Edit" asp-route-id="@Model.IdentidadPaciente">Editar</a>
+    <a class="btn btn-secondary" style="font-family:Vogue" asp-action="Index">Regresar</a>
+</div>

@@ -1,0 +1,18 @@
+﻿body {
+}
+
+.tac li ul {
+    list-style: none;
+    display: none;
+    position: absolute;
+    background-color: black;
+    text-decoration: none;
+}
+
+.tac li:hover > ul {
+    display: block;
+}
+
+.tac li:hover {
+    font-weight: bold;
+}

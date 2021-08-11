@@ -1,0 +1,53 @@
+﻿@model Triaje.Models.Consulta
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4 class="text-info" style="font-family:Vogue; text-decoration:underline; text-align:center;">Crear Consulta</h4>
+<hr />
+<div class="row">
+    <div class="col-12" style="font-family:Garamond">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group input-group">
+                <div class="col-4">
+                    <label asp-for="Fecha_Hora" class="control-label"></label>
+                    <input asp-for="Fecha_Hora" class="form-control" />
+                    <span asp-validation-for="Fecha_Hora" class="text-danger"></span>
+                </div>
+                <div class="col-4">
+                    <label asp-for="HoraTriaje" class="control-label"></label>
+                    <input asp-for="HoraTriaje" class="form-control" />
+                    <span asp-validation-for="HoraTriaje" class="text-danger"></span>
+                </div>
+                <div class="col-4">
+                    <label asp-for="Signo" class="control-label"></label>
+                    <select asp-for="IdSignoGeneral" class="form-control" asp-items="ViewBag.IdSignoGeneral"></select>
+                </div>
+                <div class="col-4">
+                    <label asp-for="IdentidadPaciente" class="control-label"></label>
+                    <select asp-for="IdentidadPaciente" class="form-control" asp-items="ViewBag.IdentidadPaciente"></select>
+                </div>
+                <div class="col-4">
+                    <label asp-for="Personal" class="control-label"></label>
+                    <select asp-for="IdentidadPersonal" class="form-control" asp-items="ViewBag.IdentidadPersonal"></select>
+                </div>
+                <div class="col-12">
+                    <label asp-for="MotivoConsulta" class="control-label"></label>
+                    <textarea rows="6" asp-for="MotivoConsulta" class="form-control"></textarea>
+                    <span asp-validation-for="MotivoConsulta" class="text-danger"></span>
+                </div>
+                <div class="col-4" style="font-family:Vogue">
+                    <br />
+                    <input type="submit" value="Crear" class="btn btn-info" />
+                    <a class="btn btn-info" asp-action="Index">Regresar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

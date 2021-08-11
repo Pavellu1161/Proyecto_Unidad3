@@ -1,0 +1,25 @@
+﻿@model Triaje.Models.TriajeGeneral.TipoPrioridad
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h4 class="" style="font-family:Vogue; text-decoration:underline; text-align:center; color:brown;">Eliminar Prioridad</h4>
+
+<h3 style="font-family:Garamond; color:brown;">¿Esta seguro de eliminar esta prioridad?</h3>
+<div>
+    <hr />
+    <dl class="row" style="font-family:Garamond;">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-2">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdPrioridadGeneral" />
+        <input type="submit" value="Eliminar" class="btn text-light" style="font-family: Vogue; background-color:brown;" />
+        <a class="btn text-light" style="font-family: Vogue; background-color:brown;" asp-action="Index">Regresar</a>
+    </form>
+</div>
