@@ -1,0 +1,43 @@
+﻿@model Triaje.Models.Personal
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h4 class="bg-dark" style="color:orange; font-family:Vogue; text-align:center; text-decoration:underline">Detalles Empleado</h4>
+
+<div>
+    <hr />
+    <dl class="row" style="font-family:Garamond;">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdentidadPersonal)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.IdentidadPersonal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NombresPersonal)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.NombresPersonal)
+        </dd>
+        <dt class="col-4"></dt>
+        
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Rol)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.Rol.NombreRol)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ApellidosPersonal)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.ApellidosPersonal)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn bg-dark" style="color:orange; font-family:Vogue;" asp-action="Edit" asp-route-id="@Model.IdentidadPersonal">Editar</a>
+    <a class="btn bg-dark" style="color:orange; font-family:Vogue;" asp-action="Index">Regresar</a>
+</div>

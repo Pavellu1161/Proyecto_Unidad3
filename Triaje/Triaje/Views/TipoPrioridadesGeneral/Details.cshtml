@@ -1,0 +1,23 @@
+﻿@model Triaje.Models.TriajeGeneral.TipoPrioridad
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h4 class="" style="font-family:Vogue; text-decoration:underline; text-align:center; color:brown;">Detalles Prioridad</h4>
+
+<div>
+    <hr />
+    <dl class="row" style="font-family:Garamond">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn text-light" style="font-family: Vogue; background-color:brown;" asp-action="Edit" asp-route-id="@Model.IdPrioridadGeneral">Editar</a>
+    <a class="btn text-light" style="font-family: Vogue; background-color:brown;" asp-action="Index">Regresar</a>
+</div>

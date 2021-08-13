@@ -1,0 +1,51 @@
+﻿@model Triaje.Models.Paciente
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h4 class="text-secondary" style="font-family:Vogue; text-decoration:underline; text-align:center;">Editar Paciente</h4>
+<hr />
+<div class="row">
+    <div class="col-12">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdentidadPaciente" />
+            <div class="form-group input-group">
+                <div class="col-4">
+                    <label asp-for="IdentidadPaciente" class="control-label"></label>
+                    <input asp-for="IdentidadPaciente" class="form-control" />
+                    <span asp-validation-for="IdentidadPaciente" class="text-danger"></span>
+                    <label asp-for="FechaNacimiento" class="control-label"></label>
+                    <input asp-for="FechaNacimiento" class="form-control" />
+                    <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+                </div>
+                <div class="col-4">
+                    <label asp-for="NombresPaciente" class="control-label"></label>
+                    <input asp-for="NombresPaciente" class="form-control" />
+                    <span asp-validation-for="NombresPaciente" class="text-danger"></span>
+                    <label asp-for="ApellidosPaciente" class="control-label"></label>
+                    <input asp-for="ApellidosPaciente" class="form-control" />
+                    <span asp-validation-for="ApellidosPaciente" class="text-danger"></span>
+                </div>
+                <div class="col-4">
+                    <label asp-for="Contacto" class="control-label"></label>
+                    <input asp-for="Contacto" class="form-control" />
+                    <span asp-validation-for="Contacto" class="text-danger"></span>
+                    <label asp-for="NumeroContacto" class="control-label"></label>
+                    <input asp-for="NumeroContacto" class="form-control" />
+                    <span asp-validation-for="NumeroContacto" class="text-danger"></span>
+                </div>
+                <div class="col-4">
+                    <br />
+                    <input type="submit" value="Guardar Cambios" class="btn btn-secondary" style="font-family:Vogue" />
+                    <a class="btn btn-secondary" style="font-family:Vogue" asp-action="Index">Regresar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

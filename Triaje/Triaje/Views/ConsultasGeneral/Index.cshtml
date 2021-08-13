@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Triaje.Models.Consulta>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 class="text-info" style="font-family:Vogue; text-decoration:underline; text-align:center;">Consultas</h2>
+
+<p>
+    <a class="btn btn-info" style="font-family:Vogue" asp-action="Create">Crer Consulta</a>
+</p>
+<div class="row">
+    <div class="col-12 " >
+        <table class="table col-12" style="font-family: Garamond;">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Fecha_Hora)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.MotivoConsulta)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Signo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.HoraTriaje)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Paciente)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Personal)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Fecha_Hora)
+                        </td>
+                        <td>
+                            <textarea rows="2" cols="25" disabled>@Html.DisplayFor(modelItem => item.MotivoConsulta)</textarea>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Signo.Nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.HoraTriaje)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Paciente.NombresPaciente)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Personal.NombresPersonal)
+                        </td>
+                        <td>
+                            <a class="btn btn-info btn-sm" style="font-family: Vogue;" asp-action="Edit" asp-route-id="@item.IdConsulta">Editar</a> 
+                            <a class="btn btn-info btn-sm" style="font-family: Vogue;" asp-action="Details" asp-route-id="@item.IdConsulta">Detalles</a> 
+                            <a class="btn btn-info btn-sm" style="font-family: Vogue;" asp-action="Delete" asp-route-id="@item.IdConsulta">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

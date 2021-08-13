@@ -1,0 +1,26 @@
+﻿@model Triaje.Models.Rol
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h4 class="bg-dark" style="color:orange; font-family:Vogue; text-align:center; text-decoration:underline">Eliminar Rol</h4>
+
+<h4 style="color: orange; font-family: Garamond;">¿Esta seguro de eliminar este rol?</h4>
+<div>
+    <hr />
+    <dl class="row" style="font-family:Garamond">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NombreRol)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NombreRol)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdRol" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" style="font-family:Vogue;" /> 
+        <a class="btn bg-dark" style="font-family:Vogue; color:orange" asp-action="Index">Regresar</a>
+    </form>
+</div>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Triaje.Models.Personal>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 class="bg-dark" style="color:orange; font-family:Vogue; text-align:center; text-decoration:underline">Empleados</h2>
+
+<p>
+    <a class="bg-dark btn" style="color:orange; font-family:Vogue;" asp-action="Create">Registrar Empleado</a>
+</p>
+<div class="row">
+    <div class="col-12">
+        <table class="table  col-12" style="font-family: Garamond;">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IdentidadPersonal)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NombresPersonal)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ApellidosPersonal)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Rol)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdentidadPersonal)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombresPersonal)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApellidosPersonal)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rol.NombreRol)
+                    </td>
+                    <td>
+                        <a class="btn bg-dark btn-sm" style="font-family: Vogue; color: orange;" asp-action="Edit" asp-route-id="@item.IdentidadPersonal">Editar</a>
+                        <a class="btn bg-dark btn-sm" style="font-family: Vogue; color: orange;" asp-action="Details" asp-route-id="@item.IdentidadPersonal">Detalles</a>
+                        <a class="btn bg-dark btn-sm" style="font-family: Vogue; color: orange;" asp-action="Delete" asp-route-id="@item.IdentidadPersonal">Eliminar</a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

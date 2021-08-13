@@ -1,0 +1,56 @@
+﻿@model Triaje.Models.Paciente
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h4 class="text-secondary" style="font-family:Vogue; text-decoration:underline; text-align:center;">Eliminar Paciente</h4>
+
+<h3 class="text-secondary" style="font-family: Garamond;">¿Esta sugro de eliminar este paciente?</h3>
+<div>
+    <hr />
+    <dl class="row" style="font-family: Garamond;">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdentidadPaciente)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.IdentidadPaciente)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NombresPaciente)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.NombresPaciente)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Contacto)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.Contacto)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.FechaNacimiento)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ApellidosPaciente)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.ApellidosPaciente)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NumeroContacto)
+        </dt>
+        <dd class="col-sm-2">
+            @Html.DisplayFor(model => model.NumeroContacto)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdentidadPaciente" />
+        <input type="submit" value="Eliminar" class="btn btn-secondary" style="font-family:Vogue" /> 
+        <a class="btn btn-secondary" style="font-family:Vogue" asp-action="Index">Regresar</a>
+    </form>
+</div>

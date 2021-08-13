@@ -1,0 +1,31 @@
+﻿@model Triaje.Models.Rol
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h4 class="bg-dark" style="color:orange; font-family:Vogue; text-decoration:underline; text-align:center">Editar Rol</h4>
+<hr />
+<div class="row">
+    <div class="col-12" style="font-family:Garamond">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdRol" />
+            <div class="form-group">
+                <div class="col-4">
+                    <label asp-for="NombreRol" class="control-label"></label>
+                    <input asp-for="NombreRol" class="form-control" />
+                    <span asp-validation-for="NombreRol" class="text-danger"></span>
+                </div>
+                <div class="col-12">
+                    <br />
+                    <input type="submit" value="Guardar Cambios" class="btn bg-dark" style="color:orange; font-family:Vogue;" />
+                    <a class="btn bg-dark" style="color:orange; font-family:Vogue;" asp-action="Index">Regresar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
