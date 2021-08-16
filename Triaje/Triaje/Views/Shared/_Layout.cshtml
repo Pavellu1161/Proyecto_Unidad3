@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Triaje</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/styles.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3 embed-responsive-item">
+            <div class="container">
+                <a class="navbar-brand text-info embed-responsive-item" style="font-family: Vogue" asp-area="" asp-controller="Home" asp-action="Index"><i class="far fa-hospital"></i> Hospital de Occidente</a>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1 tac" style="font-family: Vogue">
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: white;" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home"></i> Novedades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: white;" asp-area="" asp-controller="" asp-action="Index"><i class="fas fa-users-cog"></i> Empleados</a>
+                            <ul class="bg-dark">
+                                <li>
+                                    <a class="nav-link" style="color: white;" asp-area="" asp-controller="Personals" asp-action="Index"><i class="fas fa-users-cog"></i> Personal</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="color: white;" asp-area="" asp-controller="Roles" asp-action="Index"><i class="fas fa-users-cog"></i> Roles</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: white;" asp-area="" asp-controller="Pacientes" asp-action="Index"><i class="fas fa-user-injured"></i> Pacientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: white;" asp-area="" asp-controller="" asp-action="Index"> Triaje General</a>
+                            <ul class="bg-dark">
+                                <li>
+                                    <a class="nav-link" style="color: white;" asp-area="" asp-controller="ConsultasGeneral" asp-action="Index"><i class="fas fa-print"></i> Consultas</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="color: white;" asp-area="" asp-controller="SignosGeneral" asp-action="Index"><i class="fas fa-bacteria"></i> Signos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="color: white;" asp-area="" asp-controller="TipoPrioridadesGeneral" asp-action="Index"><i class="fas fa-book-medical"></i> Prioridades</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" style="color: white;" asp-area="" asp-controller="TipoSignosGeneral" asp-action="Index"><i class="fas fa-band-aid"></i> Signos T.</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: white;" asp-area="" asp-controller="ConsultasPediatria" asp-action="Index"><i class="fas fa-user-injured"></i>Pediatría</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: white;" asp-area="" asp-controller="ConsultasObstetrica" asp-action="Index"><i class="fas fa-user-injured"></i>Obstetricia</a>
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - Triaje - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

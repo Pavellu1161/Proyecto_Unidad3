@@ -1,0 +1,47 @@
+﻿@model Triaje.Models.Personal
+
+@{
+    ViewData["Title"] = "Create";
+}
+<h4 class="bg-dark" style="color:orange; font-family:Vogue; text-align:center; text-decoration:underline">Registrar Empleados</h4>
+<hr />
+<div class="row">
+    <div class="col-12" style="font-family:Garamond">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group input-group">
+                <div class="col-4">
+                    <label asp-for="IdentidadPersonal" class="control-label"></label>
+                    <input asp-for="IdentidadPersonal" class="form-control" />
+                    <span asp-validation-for="IdentidadPersonal" class="text-danger"></span>
+                </div>
+                <div class="col-4">
+                    <label asp-for="NombresPersonal" class="control-label"></label>
+                    <input asp-for="NombresPersonal" class="form-control" />
+                    <span asp-validation-for="NombresPersonal" class="text-danger"></span>
+                </div>
+                <div class="col-4"></div>
+
+                <div class="col-4">
+                    <label asp-for="Rol" class="control-label"></label>
+                    <select asp-for="IdRol" class="form-control" asp-items="ViewBag.IdRol"></select>
+                </div>
+                <div class="col-4">
+                    <label asp-for="ApellidosPersonal" class="control-label"></label>
+                    <input asp-for="ApellidosPersonal" class="form-control" />
+                    <span asp-validation-for="ApellidosPersonal" class="text-danger"></span>
+                </div>
+                <div class="col-4"></div>
+                <div class="col-6">
+                    <br />
+                    <input type="submit" value="Guardar" class="btn bg-dark" style="color:orange; font-family:Vogue;" />
+                    <a class="btn bg-dark" style="color:orange; font-family:Vogue;" asp-action="Index">Regresar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

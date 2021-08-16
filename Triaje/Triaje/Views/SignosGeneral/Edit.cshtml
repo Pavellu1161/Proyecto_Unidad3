@@ -1,0 +1,41 @@
+﻿@model Triaje.Models.TriajeGeneral.Signo
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h4 class="" style="font-family:Vogue; text-decoration:underline; text-align:center; color:brown;">Editar Signo</h4>
+<hr />
+<div class="row">
+    <div class="col-12">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdSignoGeneral" />
+            <div class="form-group input-group">
+                <div class="col-4">
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+                <div class="col-4">
+                    <label asp-for="TipoPrioridades" class="control-label"></label>
+                    <select asp-for="IdPrioridadGeneral" class="form-control" asp-items="ViewBag.IdPrioridadGeneral"></select>
+                    <span asp-validation-for="IdPrioridadGeneral" class="text-danger"></span>
+                </div>
+                <div class="col-4">
+                    <label asp-for="TipoSignos" class="control-label"></label>
+                    <select asp-for="IdTipoSignoGeneral" class="form-control" asp-items="ViewBag.IdTipoSignoGeneral"></select>
+                    <span asp-validation-for="IdTipoSignoGeneral" class="text-danger"></span>
+                </div>
+                <div class="col-4">
+                    <br />
+                    <input type="submit" value="Guardar Cambios" class="btn text-light" style="font-family: Vogue; Background: brown" />
+                    <a class="btn text-light" style="font-family: Vogue; Background: brown" asp-action="Index">Regresar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

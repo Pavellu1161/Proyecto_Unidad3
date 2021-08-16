@@ -1,0 +1,56 @@
+﻿@model Triaje.Models.Consulta
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h4 class="text-info" style="font-family:Vogue; text-decoration:underline; text-align:center;">Editar Consulta</h4>
+<hr />
+<div class="row">
+    <div class="col-12" style="font-family:Garamond">
+        <form asp-action="Edit" class="input-group">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdConsulta" />
+            <div class="col-4">
+                <label asp-for="Fecha_Hora" class="control-label"></label>
+                <input asp-for="Fecha_Hora" class="form-control" />
+                <span asp-validation-for="Fecha_Hora" class="text-danger"></span>
+            </div>
+            <div class="col-4">
+                <label asp-for="HoraTriaje" class="control-label"></label>
+                <input asp-for="HoraTriaje" class="form-control" />
+                <span asp-validation-for="HoraTriaje" class="text-danger"></span>
+            </div>
+            <div class="col-4">
+                <label asp-for="Signo" class="control-label"></label>
+                <select asp-for="IdSignoGeneral" class="form-control" asp-items="ViewBag.IdSignoGeneral"></select>
+                <span asp-validation-for="IdSignoGeneral" class="text-danger"></span>
+            </div>
+            <div class="col-4">
+                <label asp-for="IdentidadPaciente" class="control-label"></label>
+                <select asp-for="IdentidadPaciente" class="form-control" asp-items="ViewBag.IdentidadPaciente"></select>
+                <span asp-validation-for="IdentidadPaciente" class="text-danger"></span>
+            </div>
+            <div class="col-4">
+                <label asp-for="Personal" class="control-label"></label>
+                <select asp-for="IdentidadPersonal" class="form-control" asp-items="ViewBag.IdentidadPersonal"></select>
+                <span asp-validation-for="IdentidadPersonal" class="text-danger"></span>
+            </div>
+            <div class="col-12">
+                <label asp-for="MotivoConsulta" class="control-label"></label>
+                <textarea asp-for="MotivoConsulta" class="form-control" rows="6"></textarea>
+                <span asp-validation-for="MotivoConsulta" class="text-danger"></span>
+            </div>
+            <div class="col-4">
+                <br />
+                <input type="submit" value="Guardar cambios" class="btn btn-info" style="font-family:Vogue;" />
+                <a class="btn btn-info" style="font-family:Vogue;" asp-action="Index">Regresar</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

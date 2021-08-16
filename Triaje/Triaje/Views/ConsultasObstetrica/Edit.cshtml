@@ -1,0 +1,115 @@
+﻿@model Triaje.Models.ConsultaObstetrica
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<body>
+    <h4 class="text-info" style="font-family:Vogue; text-decoration:underline; text-align:center;">Editar Consulta Obstetrica</h4>
+    <hr />
+    <div class="row">
+        <div class="col-12" style="font-family:Garamond;">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="IdConsulta" />
+
+                <div class="col-3">
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="Paro_Cardiorespiratorio" /> @Html.DisplayNameFor(model => model.Paro_Cardiorespiratorio)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="Crisis_Convulsiva" /> @Html.DisplayNameFor(model => model.Crisis_Convulsiva)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="Dolor_CSD" /> @Html.DisplayNameFor(model => model.Dolor_CSD)
+                        </label>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="Movimientos_Fetales" /> @Html.DisplayNameFor(model => model.Movimientos_Fetales)
+                        </label>
+                    </div>
+                </div>
+
+
+
+                <div class="col-3">
+                    <div class="form-group">
+                        <label asp-for="sistolica" class="control-label"></label>
+                        <input asp-for="sistolica" class="form-control" />
+                        <span asp-validation-for="sistolica" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="diastolica" class="control-label"></label>
+                        <input asp-for="diastolica" class="form-control" />
+                        <span asp-validation-for="diastolica" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="saturacion" class="control-label"></label>
+                        <input asp-for="saturacion" class="form-control" />
+                        <span asp-validation-for="saturacion" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Frecuencia_Cardiaca" class="control-label"></label>
+                        <input asp-for="Frecuencia_Cardiaca" class="form-control" />
+                        <span asp-validation-for="Frecuencia_Cardiaca" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+                <div class="col-3">
+                    <div class="form-group">
+                        <label asp-for="Temperatura_Axilar" class="control-label"></label>
+                        <input asp-for="Temperatura_Axilar" class="form-control" />
+                        <span asp-validation-for="Temperatura_Axilar" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Frecuencia_Respiratoria" class="control-label"></label>
+                        <input asp-for="Frecuencia_Respiratoria" class="form-control" />
+                        <span asp-validation-for="Frecuencia_Respiratoria" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="IdentidadPaciente" class="control-label"></label>
+                        <select asp-for="IdentidadPaciente" class="form-control" asp-items="ViewBag.IdentidadPaciente"></select>
+                        <span asp-validation-for="IdentidadPaciente" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="IdentidadPersonal" class="control-label"></label>
+                        <select asp-for="IdentidadPersonal" class="form-control" asp-items="ViewBag.IdentidadPersonal"></select>
+                        <span asp-validation-for="IdentidadPersonal" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Comentario" class="control-label"></label>
+                        <input asp-for="Comentario" class="form-control" />
+                        <span asp-validation-for="Comentario" class="text-danger"></span>
+                    </div>
+
+                </div>
+
+                <div class="col-3">
+                    <br />
+                    <input type="submit" value="Guardar Cambios" class="btn btn-secondary" style="font-family:Vogue" />
+
+                    <a class="btn btn-secondary" style="font-family:Vogue" asp-action="Index">Regresar</a>
+                </div>
+
+            </form>
+            </div>
+        </div>
+
+
+
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
+</body>
+</html>

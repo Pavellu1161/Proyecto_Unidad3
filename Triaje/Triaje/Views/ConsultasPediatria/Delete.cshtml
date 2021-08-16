@@ -1,0 +1,148 @@
+﻿@model Triaje.Models.ConsultaPediatria
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h4>Eliminar Registro</h4>
+<hr />
+
+<h3>¿Esta seguro de querer borrar este registro?</h3>
+<div>
+    <hr />
+    <div class="form-group form-check input-group">
+        <div class="col-3">
+            <label class="col-12 bg-danger" style="text-align: center; font-family:Vogue;"> Prioridad 1 </label>
+            <br />
+            <label class="form-check-label">
+                @Html.DisplayFor(model => model.Hemorragia_Incontrolable)
+                @Html.DisplayNameFor(model => model.Hemorragia_Incontrolable)
+            </label>
+            <label class="form-check-label">
+                @Html.DisplayFor(model => model.Herida_Arma)
+                @Html.DisplayNameFor(model => model.Herida_Arma)
+            </label>
+            <br />
+            <label class="form-check-label">
+                @Html.DisplayFor(model => model.Gran_Quemado)
+                @Html.DisplayNameFor(model => model.Gran_Quemado)
+            </label>
+            <br />
+            <label class="form-check-label">
+                @Html.DisplayFor(model => model.Dengue_Grave)
+                @Html.DisplayNameFor(model => model.Dengue_Grave)
+            </label>
+            <br />
+            <label class="form-check-label">
+                @Html.DisplayFor(model => model.Mordeduras_Graves)
+                @Html.DisplayNameFor(model => model.Mordeduras_Graves)
+            </label>
+        </div>
+
+        <div class="col-3">
+            <label class="col-12 bg-warning" style="text-align: center; font-family: Vogue;"> Prioridad 2 </label>
+            <br />
+            <label class="form-check-label">
+                @Html.DisplayFor(model => model.Paciente_Oncologico)
+                @Html.DisplayNameFor(model => model.Paciente_Oncologico)
+            </label>
+            <label class="form-check-label">
+                @Html.DisplayFor(model => model.Estridor_Laringeo)
+                @Html.DisplayNameFor(model => model.Estridor_Laringeo)
+            </label>
+            <br />
+            <label class="form-check-label">
+                @Html.DisplayFor(model => model.Trauma_Ocular)
+                @Html.DisplayNameFor(model => model.Trauma_Ocular)
+            </label>
+            <label class="form-check-label">
+                @Html.DisplayFor(model => model.Varicela_Sobreinfectada)
+                @Html.DisplayNameFor(model => model.Varicela_Sobreinfectada)
+            </label>
+            <label class="form-check-label">
+                @Html.DisplayFor(model => model.Ingesta_Cuerpos_Extraños)
+                @Html.DisplayNameFor(model => model.Ingesta_Cuerpos_Extraños)
+            </label>
+        </div>
+
+        <div class="col-3">
+            <label class="col-12 bg-success" style="text-align: center; font-family: Vogue;"> Prioridad 3 </label>
+            <br />
+            <label class="form-check-label">
+                @Html.DisplayFor(model => model.Cafalea_Aguda)
+                @Html.DisplayNameFor(model => model.Cafalea_Aguda)
+            </label>
+            <br />
+            <label class="form-check-label">
+                @Html.DisplayFor(model => model.Urticaria)
+                @Html.DisplayNameFor(model => model.Urticaria)
+            </label>
+            <br />
+            <label class="form-check-label">
+                @Html.DisplayFor(model => model.Otalgia)
+                @Html.DisplayNameFor(model => model.Otalgia)
+            </label>
+            <br />
+            <label class="form-check-label">
+                @Html.DisplayFor(model => model.Dolor_Toracico)
+                @Html.DisplayNameFor(model => model.Dolor_Toracico)
+            </label>
+            <br />
+            <label class="form-check-label">
+                @Html.DisplayFor(model => model.Contusiones_Menores)
+                @Html.DisplayNameFor(model => model.Contusiones_Menores)
+            </label>
+        </div>
+
+        <div class="col-3">
+            <label class="col-12 bg-primary" style="text-align: center; font-family: Vogue;"> Prioridad 4 </label>
+            <br />
+            <label class="form-check-label">
+                @Html.DisplayFor(model => model.Patologia_Respiratoria)
+                @Html.DisplayNameFor(model => model.Patologia_Respiratoria)
+            </label>
+            <label class="form-check-label">
+                @Html.DisplayFor(model => model.Dolor_Garganta)
+                @Html.DisplayNameFor(model => model.Dolor_Garganta)
+            </label>
+            <label class="form-check-label">
+                @Html.DisplayFor(model => model.Estrenimiento_Cronico)
+                @Html.DisplayNameFor(model => model.Estrenimiento_Cronico)
+            </label>
+            <label class="form-check-label">
+                @Html.DisplayFor(model => model.Dolor_Abdominal)
+                @Html.DisplayNameFor(model => model.Dolor_Abdominal)
+            </label>
+            <br />
+            <label class="form-check-label">
+                @Html.DisplayFor(model => model.Curaciones)
+                @Html.DisplayNameFor(model => model.Curaciones)
+            </label>
+        </div>
+        <div class="col-3">
+            <br />
+            <label asp-for="IdentidadPaciente" class="control-label"></label>
+            <input type="text" placeholder="@Html.DisplayFor(model => model.Paciente.IdentidadPaciente)" disabled />
+        </div>
+        <div class="col-3">
+            <br />
+            <label asp-for="IdentidadPersonal" class="control-label"></label>
+            <input type="text" placeholder="@Html.DisplayFor(model => model.Personal.IdentidadPersonal)" disabled />
+        </div>
+        <div class="col-12">
+            <label asp-for="Comentario" class="control-label"></label>
+            <textarea rows="5" asp-for="Comentario" class="form-control" disabled></textarea>
+            <span asp-validation-for="Comentario" class="text-danger"></span>
+        </div>
+        
+        <div>
+            <hr />
+        </div>
+        <form asp-action="Delete">
+            <br />
+            <input type="hidden" asp-for="IdConsulta" />
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a class="btn btn-danger" asp-action="Index">Regresar</a>
+        </form>
+    </div>
+</div>

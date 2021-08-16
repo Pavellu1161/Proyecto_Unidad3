@@ -1,0 +1,123 @@
+﻿@model Triaje.Models.ConsultaObstetrica
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+    <h4 class="text-info" style="font-family: Vogue; text-decoration:underline; text-align:center;">Eliminar Registro</h4>
+
+    <h4 class="text-info" style="font-family:Garamond;">¿Esta seguro de eliminar el registro?</h4>
+    <div>
+
+        <hr />
+        <div class="row">
+            <div class="col-3">
+                <div class="form-group form-check">
+                    @Html.DisplayNameFor(model => model.Paro_Cardiorespiratorio)
+                </div>
+                <div class="form-group form-check">
+                    @Html.DisplayFor(model => model.Paro_Cardiorespiratorio)
+                </div>
+                <div class="form-group form-check">
+                    @Html.DisplayNameFor(model => model.Crisis_Convulsiva)
+                </div>
+                <div class="form-group form-check">
+                    @Html.DisplayFor(model => model.Crisis_Convulsiva)
+                </div>
+                <div class="form-group form-check">
+                    @Html.DisplayNameFor(model => model.Dolor_CSD)
+                </div>
+                <div class="form-group form-check">
+                    @Html.DisplayFor(model => model.Dolor_CSD)
+                </div>
+                <div class="form-group form-check">
+                    @Html.DisplayNameFor(model => model.Movimientos_Fetales)
+                </div>
+                <div class="form-group form-check">
+                    @Html.DisplayFor(model => model.Movimientos_Fetales)
+                </div>
+            </div>
+
+
+
+            <div class="col-3">
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.sistolica)
+                </div>
+                <div class="form-group">
+                    <p style="color:red;">@Html.DisplayFor(model => model.sistolica) </p>
+                </div>
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.diastolica)
+                </div>
+                <div class="form-group">
+                    <p style="color:red;">  @Html.DisplayFor(model => model.diastolica)</p>
+                </div>
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.saturacion)
+                </div>
+                <div class="form-group">
+                    <p style="color:red;"> @Html.DisplayFor(model => model.saturacion) </p>
+                </div>
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Frecuencia_Cardiaca)
+                </div>
+                <div class="form-group">
+                    <p style="color:red;"> @Html.DisplayFor(model => model.Frecuencia_Cardiaca) </p>
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="col-3">
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Temperatura_Axilar)
+                </div>
+                <div class="form-group">
+                    <p style="color:red;">@Html.DisplayFor(model => model.Temperatura_Axilar)</p>
+                </div>
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Frecuencia_Respiratoria)
+                </div>
+                <div class="form-group">
+                    <p style="color:red;"> @Html.DisplayFor(model => model.Frecuencia_Respiratoria)</p>
+                </div>
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Paciente)
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="@Html.DisplayFor(model => model.Paciente.IdentidadPaciente)" disabled />
+                </div>
+                <div class="form-group">
+                    @Html.DisplayNameFor(model => model.Personal)
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="@Html.DisplayFor(model => model.Personal.IdentidadPersonal)" disabled />
+                </div>
+
+
+            </div>
+            <div class="align-content-sm-end">
+                <label asp-for="Comentario" class="control-label"></label>
+                <textarea rows="5" asp-for="Comentario" class="form-control" disabled></textarea>
+                <span asp-validation-for="Comentario" class="text-danger"></span>
+            </div>
+        </div>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="IdConsulta" />
+            <input type="submit" value="Eliminar" class="btn btn-danger" style="font-family:Vogue;" />
+            <a class="btn btn-info" style="font-family:Vogue;" asp-action="Index">Regresar</a>
+        </form>
+    </div>
+</body>
+</html>

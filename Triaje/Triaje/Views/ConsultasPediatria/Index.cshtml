@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Triaje.Models.ConsultaPediatria>
+
+@{ ViewData["Title"] = "Pacientes"; }
+
+<h2 class="text-secondary" style="font-family:Vogue; text-decoration:underline; text-align:center">Pediatría</h2>
+<p>
+    <a class="btn bg-dark text-light" asp-action="Create">Crear Consulta Pediátrica</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Paciente.NombresPaciente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Personal.NombresPersonal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comentario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Paciente.NombresPaciente)
+        @Html.DisplayFor(modelItem => item.Paciente.ApellidosPaciente)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Personal.NombresPersonal)
+        @Html.DisplayFor(modelItem => item.Personal.ApellidosPersonal)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Comentario)
+    </td>
+    <td>
+        <a class="btn bg-dark text-light btn-sm" asp-action="Edit" asp-route-id="@item.IdConsulta">Edit</a> |
+        <a class="btn bg-dark text-light btn-sm" asp-action="Details" asp-route-id="@item.IdConsulta">Details</a> |
+        <a class="btn bg-dark text-light btn-sm" asp-action="Delete" asp-route-id="@item.IdConsulta">Delete</a>
+    </td>
+</tr>}
+    </tbody>
+</table>

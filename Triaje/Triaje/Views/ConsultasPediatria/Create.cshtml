@@ -1,0 +1,129 @@
+﻿@model Triaje.Models.ConsultaPediatria
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4 style="font-family:Vogue; text-align:center;">Crear Consulta Pediatrica</h4>
+<hr />
+<div class="row">
+    <div class="col-12" style="font-family:Garamond;">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group form-check input-group">
+                <div class="col-3">
+                    <label class="col-12 bg-danger" style="text-align: center; font-family:Vogue;"> Prioridad 1 </label>
+                    <br />
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Hemorragia_Incontrolable" /> @Html.DisplayNameFor(model => model.Hemorragia_Incontrolable)
+                    </label>
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Herida_Arma" /> @Html.DisplayNameFor(model => model.Herida_Arma)
+                    </label>
+                    <br />
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Gran_Quemado" /> @Html.DisplayNameFor(model => model.Gran_Quemado)
+                    </label>
+                    <br />
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Dengue_Grave" /> @Html.DisplayNameFor(model => model.Dengue_Grave)
+                    </label>
+                    <br />
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Mordeduras_Graves" /> @Html.DisplayNameFor(model => model.Mordeduras_Graves)
+                    </label>
+                </div>
+
+                <div class="col-3">
+                    <label class="col-12 bg-warning" style="text-align: center; font-family: Vogue;"> Prioridad 2 </label>
+                    <br />
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Paciente_Oncologico" /> @Html.DisplayNameFor(model => model.Paciente_Oncologico)
+                    </label>
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Estridor_Laringeo" /> @Html.DisplayNameFor(model => model.Estridor_Laringeo)
+                    </label>
+                    <br />
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Trauma_Ocular" /> @Html.DisplayNameFor(model => model.Trauma_Ocular)
+                    </label>
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Varicela_Sobreinfectada" /> @Html.DisplayNameFor(model => model.Varicela_Sobreinfectada)
+                    </label>
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Ingesta_Cuerpos_Extraños" /> @Html.DisplayNameFor(model => model.Ingesta_Cuerpos_Extraños)
+                    </label>
+                </div>
+
+                <div class="col-3">
+                    <label class="col-12 bg-success" style="text-align: center; font-family: Vogue;"> Prioridad 3 </label>
+                    <br />
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Cafalea_Aguda" /> @Html.DisplayNameFor(model => model.Cafalea_Aguda)
+                    </label>
+                    <br />
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Urticaria" /> @Html.DisplayNameFor(model => model.Urticaria)
+                    </label>
+                    <br />
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Otalgia" /> @Html.DisplayNameFor(model => model.Otalgia)
+                    </label>
+                    <br />
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Dolor_Toracico" /> @Html.DisplayNameFor(model => model.Dolor_Toracico)
+                    </label>
+                    <br />
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Contusiones_Menores" /> @Html.DisplayNameFor(model => model.Contusiones_Menores)
+                    </label>
+                </div>
+
+                <div class="col-3">
+                    <label class="col-12 bg-primary" style="text-align: center; font-family: Vogue;"> Prioridad 4 </label>
+                    <br />
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Patologia_Respiratoria" /> @Html.DisplayNameFor(model => model.Patologia_Respiratoria)
+                    </label>
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Dolor_Garganta" /> @Html.DisplayNameFor(model => model.Dolor_Garganta)
+                    </label>
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Estrenimiento_Cronico" /> @Html.DisplayNameFor(model => model.Estrenimiento_Cronico)
+                    </label>
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Dolor_Abdominal" /> @Html.DisplayNameFor(model => model.Dolor_Abdominal)
+                    </label>
+                    <br />
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Curaciones" /> @Html.DisplayNameFor(model => model.Curaciones)
+                    </label>
+                </div>
+                <div class="col-3">
+                    <br />
+                    <label asp-for="IdentidadPaciente" class="control-label"></label>
+                    <select asp-for="IdentidadPaciente" class="form-control" asp-items="ViewBag.IdentidadPaciente"></select>
+                </div>
+                <div class="col-3">
+                    <br />
+                    <label asp-for="IdentidadPersonal" class="control-label"></label>
+                    <select asp-for="IdentidadPersonal" class="form-control" asp-items="ViewBag.IdentidadPersonal"></select>
+                </div>
+                <div class="col-12">
+                    <label asp-for="Comentario" class="control-label"></label>
+                    <textarea rows="5" asp-for="Comentario" class="form-control"></textarea>
+                    <span asp-validation-for="Comentario" class="text-danger"></span>
+                </div>
+                <div class="col-3">
+                    <br />
+                    <input type="submit" value="Create" class="btn bg-dark text-light" />
+                    <a class="btn bg-dark text-light" asp-action="Index">Regresar</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

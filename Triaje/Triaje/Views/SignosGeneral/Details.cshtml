@@ -1,0 +1,35 @@
+﻿@model Triaje.Models.TriajeGeneral.Signo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h4 class="" style="font-family:Vogue; text-decoration:underline; text-align:center; color:brown;">Detalles Signo</h4>
+
+<div>
+    <hr />
+    <dl class="row" style="font-family:Garamond">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-2">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoPrioridades)
+        </dt>
+        <dd class = "col-sm-2">
+            @Html.DisplayFor(model => model.TipoPrioridades.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoSignos)
+        </dt>
+        <dd class = "col-sm-2">
+            @Html.DisplayFor(model => model.TipoSignos.Nombre)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn text-light" style="font-family: Vogue; background-color:brown;" asp-action="Edit" asp-route-id="@Model.IdSignoGeneral">Editar</a> 
+    <a class="btn text-light" style="font-family: Vogue; background-color:brown;" asp-action="Index">Regresar</a>
+</div>
